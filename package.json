@@ -1,6 +1,15 @@
 {
   "name": "node-courses-todo",
   "private": true,
+  "scripts": {
+    "coverage": "nyc npm test",
+    "lint": "standard --fix \"src/**/*.js\"",
+    "start": "node src/index.js",
+    "check-homework": "node ./check-homework/get-code.js",
+    "test": "mocha --recursive --timeout=10000 test/index.js test",
+    "test-watch": "mocha --recursive --watch --timeout=10000 test/index.js test",
+    "watch": "nodemon src/index.js"
+  },
   "dependencies": {
     "dotenv": "^8.6.0",
     "jstodotxt": "git+https://github.com/jmhobbs/jsTodoTxt.git#0.10.0",
@@ -29,15 +38,6 @@
     "sinon": "^9.2.4",
     "standard": "^14.3.4",
     "supertest": "^4.0.2"
-  },
-  "scripts": {
-    "coverage": "nyc npm test",
-    "lint": "standard --fix \"src/**/*.js\"",
-    "start": "node src/index.js",
-    "check-homework": "node ./check-homework/get-code.js",
-    "test": "mocha --recursive --timeout=10000 test/index.js test",
-    "test-watch": "mocha --recursive --watch --timeout=10000 test/index.js test",
-    "watch": "nodemon src/index.js"
   },
   "standard": {
     "parser": "babel-eslint"
